@@ -1,0 +1,31 @@
+[
+    {
+      "_id": "C101",
+      "name": "Education 100",
+      "number": "C100",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15"
+    },
+    {
+      "_id": "C102",
+      "name": "Education 101",
+      "number": "C200",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15"
+    },
+    {
+      "_id": "C103",
+      "name": "Education 102",
+      "number": "C300",
+      "startDate": "2024-01-10",
+      "endDate": "2024-05-15"
+    },
+    {
+        "_id": "C104",
+        "name": "Education 103",
+        "number": "C400",
+        "startDate": "2024-01-10",
+        "endDate": "2024-05-15"
+       
+      }
+  ]
