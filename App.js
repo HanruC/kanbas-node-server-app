@@ -11,19 +11,15 @@ import Hello from "./Hello.js";
 import Lab5 from "./lab5.js";
 
 const app = express();
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas';
-mongoose.connect(CONNECTION_STRING, {
+// Connect to MongoDB
+mongoose.connect(process.env.DB_CONNECTION_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(() => {
-  console.log('Connected to MongoDB');
-}).catch((error) => {
-  console.error('Error connecting to MongoDB:', error);
 });
 
 app.use(cors({
   credentials: true,
-  origin: process.env.FRONTEND_URL
+  origin: process.env.FRONTEND_URL,
 }));
 
 const sessionOptions = {
@@ -32,10 +28,10 @@ const sessionOptions = {
   saveUninitialized: false,
 };
 
-if (process.env.NODE_ENV !== "development") {
+if (process.env.NODE_ENV !== 'development') {
   sessionOptions.proxy = true;
   sessionOptions.cookie = {
-    sameSite: "none",
+    sameSite: 'none',
     secure: true,
     domain: process.env.HTTP_SERVER_DOMAIN,
   };
