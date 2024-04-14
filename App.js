@@ -16,11 +16,9 @@ mongoose.connect(CONNECTION_STRING);
   app.use(
     cors({
       credentials: true,
-      origin: process.env.FRONTEND_URL,
-       //origin: "http://localhost:3000",
+      origin: 'https://a6--silly-sundae-f73064.netlify.app',
     })
   );
-// app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(express.json());
 UserRoutes(app);
 ModuleRoutes(app);
