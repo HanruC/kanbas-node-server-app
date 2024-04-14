@@ -16,7 +16,7 @@ mongoose.connect(CONNECTION_STRING);
   app.use(
     cors({
       credentials: true,
-      origin: 'https://a6--silly-sundae-f73064.netlify.app',
+      origin: process.env.FRONTEND_URL,
     })
   );
 app.use(express.json());
