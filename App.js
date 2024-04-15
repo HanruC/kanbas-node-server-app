@@ -18,11 +18,11 @@ mongoose.connect(CONNECTION_STRING);
 
 app.use(cors({
   credentials: true,
-  origin: "a6--silly-sundae-f73064.netlify.app",
+  origin: process.env.FRONTEND_URL,
 }));
 
 const sessionOptions = {
-  secret: process.env.SESSION_SECRET,
+  secret: "any string",
   resave: false,
   saveUninitialized: false,
 };
@@ -46,7 +46,4 @@ AssignmentRoutes(app);
 Lab5(app);
 Hello(app);
 
-const port = process.env.PORT || 4000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+app.listen(process.env.PORT || 4000);
