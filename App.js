@@ -18,10 +18,10 @@ mongoose.connect(CONNECTION_STRING);
 
 app.use(cors({
   credentials: true,
-  origin: process.env.FRONTEND_URL}));
+  origin: "https://a6--silly-sundae-f73064.netlify.app"}));
 
 const sessionOptions = {
-  secret: process.env.SESSION_SECRET,
+  secret: "any string",
   resave: false,
   saveUninitialized: false,
 };
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV !== 'development') {
   sessionOptions.cookie = {
     sameSite: 'none',
     secure: true,
-    domain: process.env.HTTP_SERVER_DOMAIN,
+    // domain: process.env.HTTP_SERVER_DOMAIN,
   };
 }
 
