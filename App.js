@@ -11,11 +11,9 @@ import Hello from "./Hello.js";
 import Lab5 from "./lab5.js";
 
 const app = express();
+
 // Connect to MongoDB
-mongoose.connect(process.env.DB_CONNECTION_STRING, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect("mongodb://localhost:27017/kanbas");
 
 app.use(cors({
   credentials: true,
