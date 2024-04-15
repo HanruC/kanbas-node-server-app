@@ -18,8 +18,7 @@ mongoose.connect(CONNECTION_STRING);
 
 app.use(cors({
   credentials: true,
-  origin: process.env.FRONTEND_URL,
-}));
+  origin: 'https://a6--silly-sundae-f73064.netlify.app'}));
 
 const sessionOptions = {
   secret: "any string",
